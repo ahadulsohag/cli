@@ -1,4 +1,5 @@
 import 'dart:io';
+
 // const version = '1.0.0';
 // void main(List<String> arguments) {
 //   if (arguments.isEmpty) {
@@ -29,5 +30,12 @@ void printUsage() {
 }
 
 void searchWikipedia(List<String>? arguments) {
-  print('searchWikipedia received arguments: $arguments');
+  final String articleTitle;
+  if (arguments == null || arguments.isEmpty) {
+    print('Please provide an article title.');
+    articleTitle = stdin.readLineSync() ?? '';
+  } else {
+    articleTitle = arguments.join(' ');
+  }
+  print('current article title: $articleTitle');
 }
