@@ -1,13 +1,5 @@
 import 'dart:io';
 
-// const version = '1.0.0';
-// void main(List<String> arguments) {
-//   if (arguments.isEmpty) {
-//     print('hello, World!');
-//   } else if (arguments.first == 'version') {
-//     print('Dartpedia CLI version is $version');
-//   }
-// }
 const version = '0.0.1'; // Add this line
 
 void main(List<String> arguments) {
