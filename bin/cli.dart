@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:http/http.dart' as http;
+import 'package:command_runner/command_runner.dart';
 
 const version = '0.0.1'; // Add this line
 
@@ -14,8 +15,8 @@ void main(List<String> arguments) {
   } else {
     printUsage();
   }
-  
 }
+
 Future<String> getWikipediaArticle(String articleTitle) async {
   final url = Uri.https(
     'en.wikipedia.org',
