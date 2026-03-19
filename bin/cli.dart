@@ -4,17 +4,9 @@ import 'package:command_runner/command_runner.dart';
 
 const version = '0.0.1'; // Add this line
 
-void main(List<String> arguments) {
-  if (arguments.isEmpty || arguments.first == 'help') {
-    printUsage();
-  } else if (arguments.first == 'version') {
-    print('dartpedia cli version $version');
-  } else if (arguments.first == 'wikipedia') {
-    final inputArgs = arguments.length > 1 ? arguments.sublist(1) : null;
-    searchWikipedia(inputArgs);
-  } else {
-    printUsage();
-  }
+void main(List<String> arguments) async {
+  var runner = CommandRunner();
+  await runner.run(arguments);
 }
 
 Future<String> getWikipediaArticle(String articleTitle) async {
